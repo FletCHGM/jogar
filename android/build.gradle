@@ -28,19 +28,3 @@ subprojects {
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
-android.signingConfigs {
-    create("release") {
-        storeFile =file("keystore.jks")
-        storePassword= "newapp"
-        keyAlias ="key0"
-        keyPassword ="newapp"
-        storeType= "jks"
-    }
-}
-buildTypes {
-    release {
-
-        signingConfig = signingConfigs.getByName("release")
-
-    }
-}
